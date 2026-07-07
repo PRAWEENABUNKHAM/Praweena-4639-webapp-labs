@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8"/>
         <title>Customer Feedback Survey</title>
@@ -27,5 +27,94 @@
             <legend>Service Evaluation</legend><br>
 
             <label for="servicerating">Overall Service Rating (1-5) *</label><br>
+            <input type="radio" id="rate1" name="rating" value="1" required>
+            <label for="rate1">1 - Poor</label><br>
+            <input type="radio" id="rate2" name="rating" value="2">
+            <label for="rate2">2 - Fair</label><br>
+            <input type="radio" id="rate3" name="rating" value="3">
+            <label for="rate3">3 - Good</label><br>
+            <input type="radio" id="rate4" name="rating" value="4">
+            <label for="rate4">4 - Very Good</label><br>
+            <input type="radio" id="rate5" name="rating" value="5">
+            <label for="rate5">5 - Excellent</label><br>
+            <br>
+
+            <label for="category">Service Category *</label><br>
+            <select id="category" name="category" required>
+                <option value="">Select service category</option>
+                <option value="technical">Technical Support</option>
+                <option value="sales">Sales</option>
+                <option value="billing">Billing</option>
+                <option value="general">General Inquiry</option>
+            </select><br>
+            <br>
+
+            <label for="recommend">Would you recommend our service to others? *</label><br>
+            <input type="radio" id="rec_yes" name="recommend" value="yes" required>
+            <label for="rec_yes">Yes, definitely</label><br>
+            <input type="radio" id="rec_maybe" name="recommend" value="maybe">
+            <label for="rec_maybe">Maybe</label><br>
+            <input type="radio" id="rec_no" name="recommend" value="no">
+            <label for="rec_no">No, I would not</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Experience Details</legend><br>
+
+            <label for="visitdate">Visit Date</label><br>
+            <input type="date" id="visitdate" name="visitdate"><br>
+            <br>
+
+            <label for="heard">How did you hear about us? (Select all that apply)</label><br>
+            <input type="checkbox" id="hear_social" name="heard" value="social">
+            <label for="hear_social">Social Media</label><br>
+            <input type="checkbox" id="hear_friend" name="heard" value="friend">
+            <label for="hear_friend">Friend/Family Recommendation</label><br>
+            <input type="checkbox" id="hear_ad" name="heard" value="ad">
+            <label for="hear_ad">Advertisement</label><br>
+            <input type="checkbox" id="hear_search" name="heard" value="search">
+            <label for="hear_search">Search Engine</label><br>
+            <input type="checkbox" id="hear_other" name="heard" value="other">
+            <label for="hear_other">Other</label><br>
+            <br>
+
+            <label for="comments">Additional Comments *</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="40" minlength="10"
+                      placeholder="Please share your detailed feedback here..." required></textarea><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Preferences</legend><br>
+
+            <label for="contactmethod">Preferred Contact Method</label><br>
+            <input type="radio" id="contact_email" name="contactmethod" value="email">
+            <label for="contact_email">Email</label><br>
+            <input type="radio" id="contact_phone" name="contactmethod" value="phone">
+            <label for="contact_phone">Phone</label><br>
+            <input type="radio" id="contact_sms" name="contactmethod" value="sms">
+            <label for="contact_sms">SMS</label><br>
+            <input type="radio" id="contact_mail" name="contactmethod" value="mail">
+            <label for="contact_mail">Postal Mail</label><br>
+            <input type="radio" id="contact_none" name="contactmethod" value="none">
+            <label for="contact_none">Do not contact me</label><br>
+            <br>
+
+            <label for="besttime">Best Time to Contact</label><br>
+            <select id="besttime" name="besttime">
+                <option value="">Select preferred time</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select><br>
+        </fieldset>
+
+        <br>
+        <input type="checkbox" id="confirm" name="confirm" required>
+        <label for="confirm">I confirm that all information provided is accurate *</label><br>
+        <br>
+
+        <button type="submit">Submit Feedback</button>
+        <button type="reset">Clear All Fields</button>
+
     </body>
 </html>
