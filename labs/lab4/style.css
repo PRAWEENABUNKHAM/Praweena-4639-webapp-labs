@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+    color: #800505;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #fafafa;
+}
+
+main {
+    padding-bottom: 15px;
+}
+
+section {
+    margin-bottom: 15px;
+}
+
+#profile-header {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #800505d7;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    margin-top: 6px;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+#about-me h2,
+#hobbies h2,
+#skills h2 {
+    border-bottom: 2px solid #800505;
+    padding-bottom: 6px;
+}
+
+.key-term {
+    background-color: #f18dd0be;
+    color: #800505;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.hobbies-list {
+    list-style-type: upper-roman;
+    padding-left: 30px;
+}
+
+.hobbies-list li {
+    margin-bottom: 8px;
+}
+
+.skills-list {
+    list-style-type: circle;
+    padding-left: 30px;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888888;
+    padding: 15px 0;
+}
