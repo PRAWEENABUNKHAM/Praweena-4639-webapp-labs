@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Challenge: Create a solar system</title>
+    <style>
+      body {
+        background-color: black;
+        padding: 10px;
+      }
+
+      .planet {
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 50%;
+        text-align: center;
+        padding: 0.625rem;
+        position: relative;
+      }
+
+      .moon {
+        position: absolute;
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+        background: rgb(237, 237, 237);
+      }
+
+      @media (max-width: 30rem) {
+        .planet {
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create the planet
+        const planet = document.createElement("div");
+        planet.classList.add("planet");
+        planet.style.backgroundColor = "gray";
+
+        // Create the moon
+        const moon = document.createElement("div");
+        moon.classList.add("moon");
+        moon.style.backgroundColor = "yellow";
+
+        // Moon is a child of the planet
+        planet.appendChild(moon);
+
+        // Add planet to the page
+        document.body.appendChild(planet);
+
+        // Create the text
+        const text = document.createElement("div");
+        text.textContent = "The planet and the moon";
+        text.style.color = "white";
+
+        // Put text below the planet
+        document.body.appendChild(text);
+      });
+    </script>
+  </head>
+</html>
