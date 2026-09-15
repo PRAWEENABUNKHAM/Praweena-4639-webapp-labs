@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Challenge: Catwalk</title>
+    <style>
+      #cat {
+        position: absolute;
+        left: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- Cat walking GIF from: http://www.anniemation.com/clip_art/graphics.html -->
+      <img
+        id="cat"
+        src="https://www.kasandbox.org/programming-images/misc/cat-walk.gif"
+      />
+    </div>
+
+    <script>
+      const catEl = document.querySelector("#cat");
+
+      // The image above is the WALKING cat. When the cat stops, switch to a STATIC cat.
+      const staticCatSrc =
+        "https://www.kasandbox.org/programming-images/animals/cat.png";
+
+      const speed = 200; // pixels per second
+
+      const startWalk = () => {
+        let startTime = null;
+
+        const walkTheCat = (timestamp) => {
+          if (startTime === null) {
+            startTime = timestamp;
+          }
+
+          const secondsElapsed = (timestamp - startTime) / 1000;
+
+          // Keep the cat walking in place for 5 seconds
+          if (secondsElapsed < 5) {
+            catEl.style.transform = "translateX(0px)";
+            requestAnimationFrame(walkTheCat);
+            return;
+          }
+
+          // Start moving after 5 seconds
+          const distance = (secondsElapsed - 5) * speed;
+
+          // Calculate the stopping position at the right edge
+          const maxDistance = window.innerWidth - catEl.offsetWidth;
+
+          // Stop at the right edge
+          if (distance >= maxDistance) {
+            catEl.style.transform = `translateX(${maxDistance}px)`;
+
+            // Keep the same width when changing to the static cat
+            const currentWidth = catEl.offsetWidth;
+
+            // Change to static cat image
+            catEl.src = staticCatSrc;
+
+            // Keep the same width
+            catEl.style.width = `${currentWidth}px`;
+
+            return;
+          }
+
+          // Move the cat
+          catEl.style.transform = `translateX(${distance}px)`;
+
+          // Continue the animation
+          requestAnimationFrame(walkTheCat);
+        };
+
+        requestAnimationFrame(walkTheCat);
+      };
+
+      // Start after the image has loaded
+      window.addEventListener("load", startWalk);
+    </script>
+  </body>
+</html>
