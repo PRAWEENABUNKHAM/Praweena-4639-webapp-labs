@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Places Information</title>
+
+    <style>
+        .name {
+            color: blue;
+        }
+
+        .location {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ol id="places"></ol>
+
+    <script>
+        fetch("places.json")
+            .then(response => response.json())
+            .then(data => {
+
+                const places = document.getElementById("places");
+
+                data.results.forEach(place => {
+
+                    const li = document.createElement("li");
+
+                    li.innerHTML = `
+                        <div class="name">
+                            name = ${place.name}
+                        </div>
+
+                        <div class="location">
+                            location = ${place.geometry.location.lat} ${place.geometry.location.lng}
+                        </div>
+                    `;
+
+                    places.appendChild(li);
+                });
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Students Information</title>
+</head>
+
+<body>
+
+    <h2>Reading Students Information</h2>
+
+    <ol id="students"></ol>
+
+    <script>
+        fetch("students.json")
+            .then(response => response.json())
+            .then(data => {
+
+                const students = document.getElementById("students");
+
+                data.wclass.forEach(item => {
+
+                    const student = item.student;
+
+                    const li = document.createElement("li");
+
+                    li.innerHTML = `
+                        ${student["@attributes"].id}
+                        <b>${student.name}</b>
+                        has skills
+                        <i>${student.skill}</i>
+                    `;
+
+                    students.appendChild(li);
+                });
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    </script>
+
+</body>
+</html>
