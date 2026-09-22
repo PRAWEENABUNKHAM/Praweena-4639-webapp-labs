@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding a new post</title>
+</head>
+
+<body>
+
+    <h1>Adding a new post</h1>
+
+    <div id="result"></div>
+
+    <script>
+        const post = {
+            userId: 1,
+            title: "Fix my bugs",
+            completed: false
+        };
+
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(post)
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").textContent =
+                JSON.stringify(data);
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+    </script>
+
+</body>
+</html>
