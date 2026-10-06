@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "calculator": "node calculator.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }

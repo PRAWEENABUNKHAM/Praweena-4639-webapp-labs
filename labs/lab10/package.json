@@ -2,9 +2,11 @@
     "name": "lab10",
     "version": "1.0.0",
     "scripts": {
-        "calculator": "node calculator.js"
+        "calculator": "node calculator.js",
+        "start": "node ip-api.js"
     },
     "dependencies": {
-        "axios": "^1.20.0"
+        "axios": "^1.20.0",
+        "express": "^5.2.1"
     }
 }
