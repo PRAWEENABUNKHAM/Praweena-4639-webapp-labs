@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.App h1 {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.App img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto 0;
+}
+
+.App a {
+  display: block;
+  margin-top: 20px;
+}
